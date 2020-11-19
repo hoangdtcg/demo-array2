@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Thao tác với mảng: Thêm - Sửa - Xóa - Đọc
+    //CRUD : Create - Read - Update - Delete
+
+    let arr = [1,3,5,7,9];
+    //Hiển thị
+    function display() {
+        document.write(arr);
+    }
+    //Thêm - Create - Add
+    //Đầu
+    function addFirst() {
+        let num = 100;
+        for (let i = arr.length; i > 0 ; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[0] = num;
+        // arr.unshift(num);
+        document.write(arr);
+    }
+    // addFirst();
+
+    //Cuối
+    function addLast() {
+        let num = 100;
+        arr[arr.length] = num;
+        // arr.push(num);
+        document.write(arr);
+    }
+    // addLast();
+    //Vị trí bất kỳ
+    function addAnyPos() {
+        let index = 2;
+        let num = 100;
+        for (let i = arr.length; i > index ; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[index] = num;
+        // arr.splice(index,0,num);
+        document.write(arr);
+    }
+    // addAnyPos();
+    //Sửa - Update
+    function update() {
+        let index = 2;
+        let value = 99;
+        arr[index] = value;
+        display();
+    }
+    // update();
+    //Xóa - Delete
+    //Đầu
+    function delFirst() {
+        for (let i = 0; i < arr.length-1; i++) {
+            arr[i] = arr[i+1];
+        }
+        arr.length--;
+        // arr.shift();
+        display();
+    }
+    // delFirst();
+    //Cuối
+    function delLast() {
+        arr.length--;
+        // arr.pop();
+        display();
+    }
+    // delLast();
+    //Vị trí bất kỳ
+    function delAnyPos() {
+        let index = 2;
+        for (let i = index; i < arr.length-1; i++) {
+            arr[i] = arr[i+1];
+        }
+        arr.length--;
+        // arr.splice(index,1);
+        display();
+    }
+    // delAnyPos();
+
+    //Split
+    function strToArray() {
+        let str = "Toi la Ngan";
+        let arr = str.split("");
+        document.write(arr);
+    }
+    strToArray();
+</script>
+</body>
+</html>
